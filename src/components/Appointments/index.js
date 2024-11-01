@@ -1,7 +1,5 @@
 // Write your code here
 
-// How to push changes from visual studio code to GitHub | Tech Projects
-
 import {Component} from 'react'
 import {v4} from 'uuid'
 import AppointmentItem from '../AppointmentItem'
@@ -71,62 +69,62 @@ class Appointments extends Component {
   }
 
   render() {
-    const {titleInput, dateInput} = this.state
+    const {titleInput, dateInput, isStarred} = this.state
+    const filterClassName = isStarred ? 'filter-filled' : 'filter-empty'
 
     return (
       <div className="app-container">
-        <div className="appointment-container">
-          <h1 className="app-heading">Add Appointment</h1>
-          <div className="appointment-input-container">
-            <form className="form" onSubmit={this.addAppointment}>
-              <label htmlFor="title" className="title">
-                TITLE
-              </label>
-              <br />
-              <input
-                type="text"
-                className="title-input"
-                id="title"
-                placeholder="Title"
-                value={titleInput}
-                onChange={this.onChangeTitleInput}
+        <div className="responsive-container">
+          <div className="appointments-container">
+            <div className="add-appointment-container">
+              <form className="form" onSubmit={this.addAppointment}>
+                <h1 className="add-appointment-heading">Add Appointment</h1>
+                <label htmlFor="title" className="label">
+                  TITLE
+                </label>
+                <input
+                  type="text"
+                  className="input"
+                  id="title"
+                  placeholder="Title"
+                  value={titleInput}
+                  onChange={this.onChangeTitleInput}
+                />
+                <label htmlFor="date" className="label">
+                  DATE
+                </label>
+                <input
+                  type="date"
+                  className="input"
+                  id="date"
+                  value={dateInput}
+                  onChange={this.onChangeDateInput}
+                />
+                <button className="add-button" type="submit">
+                  Add
+                </button>
+              </form>
+              <img
+                src="https://assets.ccbp.in/frontend/react-js/appointments-app/appointments-img.png"
+                className="appointments-img"
+                alt="appointments"
               />
-              <br />
-              <label htmlFor="date" className="date">
-                DATE
-              </label>
-              <br />
-              <input
-                type="date"
-                className="date-input"
-                id="date"
-                placeholder="dd/mm/yyyy"
-                value={dateInput}
-                onChange={this.onChangeDateInput}
-              />
-              <br />
-              <button className="button" type="submit">
-                Add
+            </div>
+            <hr className="hr" />
+            <div className="header-with-filter-container">
+              <h1 className="appointments-heading">Appointments</h1>
+              <button
+                className={`filter-style ${filterClassName}`}
+                type="button"
+                onClick={this.starredAppointments}
+              >
+                Starred
               </button>
-            </form>
-            <img
-              src="https://assets.ccbp.in/frontend/react-js/appointments-app/appointments-img.png"
-              className="image"
-              alt="appointments"
-            />
+            </div>
+            <ul className="appointments-list">
+              {this.renderAppointmentsList()}
+            </ul>
           </div>
-          <hr className="separator" />
-          <div className="starred-button-container">
-            <h1 className="heading">Appointments</h1>
-            <button
-              className="starred-button"
-              type="button"
-              onClick={this.starredAppointments}
-            >
-              Starred
-            </button>
-          </div>
-          <ul className="appointments-list">{this.renderAppointmentsList()}</ul>
         </div>
       </div>
     )

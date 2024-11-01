@@ -18,18 +18,16 @@ const AppointmentItem = props => {
     <li className="appointment-item">
       <div className="appointment-details">
         <p className="appointment-title">{titleInput}</p>
-        <p className="appointment-date">{appointmentDate}</p>
-      </div>
-      <div>
         <button
           data-testid="star"
           type="button"
           className="star-button"
           onClick={onClickStar}
         >
-          <img src={starImgUrl} alt="star" />
+          <img src={starImgUrl} alt="star" className="star" />
         </button>
       </div>
+      <p className="appointment-date">Date: {appointmentDate}</p>
     </li>
   )
 }
