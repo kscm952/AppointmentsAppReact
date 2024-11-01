@@ -1,0 +1,30 @@
+/* Write your CSS here */
+.appointment-item {
+  list-style-type: none;
+  display: flex;
+  border: 1px solid #b5b7c4;
+  border-radius: 10px;
+  padding: 20px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.appointment-details {
+  font-family: 'Roboto';
+  margin-right: 10px;
+}
+
+.appointment-tilte {
+  font-size: 20px;
+  color: #000000;
+}
+
+.appointment-date {
+  font-size: 16px;
+  color: #b5b7c4;
+}
+
+.star-button {
+  background-color: white;
+  border: none;
+}
