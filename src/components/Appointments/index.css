@@ -68,7 +68,7 @@
 }
 
 .title-input {
-  font-family: "Roboto";
+  font-family: 'Roboto';
   height: 36px;
   font-size: 18px;
   color: #000000;
@@ -86,7 +86,7 @@
 }
 
 .date-input {
-  font-family: "Roboto";
+  font-family: 'Roboto';
   font-size: 18px;
   height: 36px;
   color: #000000;

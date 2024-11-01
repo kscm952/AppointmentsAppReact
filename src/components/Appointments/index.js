@@ -1,4 +1,7 @@
 // Write your code here
+
+// How to push changes from visual studio code to GitHub | Tech Projects
+
 import {Component} from 'react'
 import {v4} from 'uuid'
 import AppointmentItem from '../AppointmentItem'
